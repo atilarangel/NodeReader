@@ -1,0 +1,12 @@
+Raspberry Py
+	deixa automatizado para rodar infinitamente
+
+	verifica de 1 em 1 hora se ha um novo documento
+		nao ignorar nenhum documento, baixar todos
+
+Otimizar leitor de pdf	X
+
+Enviar um email para mais de uma pessoa quando encontrar as palavras	X
+	neste email deve ter
+		o link do pdf, a pagina e as palavras encontradas	X
+
