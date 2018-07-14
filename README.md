@@ -10,3 +10,5 @@ It working with Node.Js and a Raspiberry Pi (run daily automate software).
 https://www.youtube.com/watch?v=-aDsT-4nMkU&feature=youtu.be
 
 Resultado: 
+
+![capturar](https://user-images.githubusercontent.com/18295160/42720815-40aac3da-8705-11e8-89d8-754ec040f066.PNG)
