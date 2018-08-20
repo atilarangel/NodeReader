@@ -10,7 +10,29 @@ const dbWrite = require('./database/index')
 
 let url
 let date
-let input = ['edital','edital'].map(y => y.toLowerCase())
+let input = [
+'edital',
+'licitao',
+'licitação',
+'licitações',
+'recursos',
+'recurso',
+'social',
+'sociais',
+'proposta',
+'propostas',
+'tcnica',
+'técnica',
+'eletromidia',
+'eletromídia',
+'eletromidia',
+'mdias',
+'mídias',
+'experincia',
+'experiência',
+'evento',
+'eventos',
+].map(y => y.toLowerCase())
 
 analysis()
 	.then(data => {
@@ -29,11 +51,11 @@ analysis()
 									console.log(`6 - Recebendo resultado de pdfReaderMain`)
 									if (list.length > 1) {
 										list = list.reduce((acc, elm)=>{
-											acc+=`<p><p>${Object.keys(elm)}</p><p>${(Object.values(elm)[0]).replace('edital', '<b style="color: red;">edital</b>')}</p></p>`
+											acc+=`<p><p>${Object.keys(elm)}</p><p>${(Object.values(elm)[0])}</p></p>`
 											return acc
 										})
-										server.send(message(date, url, list), (err, message) => { 
-											// console.log(err || message) 
+										server.send(message(date, url, list), (err, message) => {
+											// console.log(err || message)
 										})
 										console.log(`7 - Relatório Enviado`)
 									} else {

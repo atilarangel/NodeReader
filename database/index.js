@@ -1,7 +1,7 @@
 const Datastore = require('nedb'), db = new Datastore({ filename: 'database/checkData.json', autoload: true })
 
 const dbWrite = query =>
-	new Promise((resolve, reject) => 
+	new Promise((resolve, reject) =>
 		db.find(query, (err, docs) => {
 			if (err) return reject(err)
 
@@ -10,7 +10,7 @@ const dbWrite = query =>
 				return resolve(true)
 			} else {
 				// console.log('NAO ACHEI DENTRO DE DB')
-				db.insert(query, function (err, newDoc) { if (err) return })
+				// db.insert(query, function (err, newDoc) { if (err) return })
 				return resolve(false)
 			}
 		})

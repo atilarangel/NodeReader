@@ -15,7 +15,7 @@ const filter = data => {
 	x = x[0]
 	let id = x.slice(x.indexOf('"')+1, x.indexOf('">'))
 	let date = x.slice(x.indexOf('>')+1, x.indexOf('</option>'))
-	list.push(id, date)
+	list.push(id, date.replace("�", "º"))
 	console.log(`3 - Mandando ${list[0]} ${list[1]} para index`)
 	return list
 	// console.log(list)
