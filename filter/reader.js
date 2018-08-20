@@ -45,7 +45,6 @@ const organizeItem = (object, index, input) => {
           count++
         }
         obj[`Na página ${index} encontramos ${input[0]} em: `] = listSlice
-        console.log(listSlice)
         sent.push(obj)
       }
   }
