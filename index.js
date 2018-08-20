@@ -10,7 +10,7 @@ const dbWrite = require('./database/index')
 
 let url
 let date
-let input = ['edita','museu'].map(y => y.toLowerCase())
+let input = ['edital','edital'].map(y => y.toLowerCase())
 
 analysis()
 	.then(data => {
@@ -29,7 +29,7 @@ analysis()
 									console.log(`6 - Recebendo resultado de pdfReaderMain`)
 									if (list.length > 1) {
 										list = list.reduce((acc, elm)=>{
-											acc+=`<p><p>${Object.keys(elm)}</p><p>${Object.values(elm)}</p></p>`
+											acc+=`<p><p>${Object.keys(elm)}</p><p>${(Object.values(elm)[0]).replace('edital', '<b style="color: red;">edital</b>')}</p></p>`
 											return acc
 										})
 										server.send(message(date, url, list), (err, message) => { 
