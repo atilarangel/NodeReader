@@ -10,7 +10,7 @@ const dbWrite = query =>
 				return resolve(true)
 			} else {
 				// console.log('NAO ACHEI DENTRO DE DB')
-				// db.insert(query, function (err, newDoc) { if (err) return })
+				db.insert(query, function (err, newDoc) { if (err) return })
 				return resolve(false)
 			}
 		})

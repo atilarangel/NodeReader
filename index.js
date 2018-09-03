@@ -36,10 +36,10 @@ let input = [
 
 analysis()
 	.then(data => {
-		url = `http://doweb.rio.rj.gov.br/ler_pdf.php?page=0&edi_id=${data[0]}`
-		date = data[1]
-		console.log('4 - Verificando se já foi analisado')
-		return dbWrite({ name: date, value: data[0] })
+		url = `http://doweb.rio.rj.gov.br/apifront/portal/edicoes/pdf_diario/${data.id}`;
+		date = data.data
+		console.log(url, date)
+		return dbWrite({ name: data.data, value: data.id })
 			.then(response => {
 				if (!response) {
 					console.log('NAO ACHEI ELE ENTAO VOU MANDAR O RELATORIO')
@@ -54,8 +54,8 @@ analysis()
 											acc+=`<p><p>${Object.keys(elm)}</p><p>${(Object.values(elm)[0])}</p></p>`
 											return acc
 										})
-										server.send(message(date, url, list), (err, message) => {
-											// console.log(err || message)
+										server.send(message(data.tipo_edicao_nome, url, list, date), (err, message) => {
+											console.log(err || message)
 										})
 										console.log(`7 - Relatório Enviado`)
 									} else {
